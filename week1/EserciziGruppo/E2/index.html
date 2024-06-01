@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .container2{
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            height: 250px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+        }
+
+        #box{
+             border: 2px solid black;
+        }
+
+        .container2 > div{
+            height: 200px;
+            width: 200px;
+            background-color: black;
+        }
+
+        .button{
+            width: 200px;
+            height: 40px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button1{
+            background-color: red;
+        }
+        .button2{
+            background-color: yellow;
+        }
+        .button3{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="button button1" id="buttonRed">red</div>
+        <div class="button button2" id="buttonYellow">yellow</div>
+        <div class="button button3" id="buttonGreen">green</div>
+    </div>
+
+    <div class="container2" id="container2">
+        <div id="box"></div>
+    </div>
+
+        <script src="./script.js"></script>
+</body>
+</html>
