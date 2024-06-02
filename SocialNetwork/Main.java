@@ -3,21 +3,36 @@ package SocialNetwork;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Main {
-    
-    static void LogIn(String username, String password) {
+ public class Main {
+    private String username;
+    private String password;
+    private ArrayList<String> database;
+
+    public Main(String username, String password) {
+        this.username = username;
+        this.password = password;
+        database = new ArrayList<>();
+    }
+
+    private void Login() {
         Scanner inputS = new Scanner(System.in);
 
         System.out.println("Benvenuto! Inserire username:");
-        username = inputS.nextLine();
-
-        System.out.println("Inserire password:");
-        password = inputS.nextLine();
+        if (inputS.nextLine().equals(username)) {
+            System.out.println("Inserire password:");
+            if (inputS.nextLine().equals(password)) {
+                System.out.println("Login effettuato con successo!");
+            } else {
+                System.out.println("Password errata");
+            }
+        } else {
+            System.out.println("Username non trovato");
+        }
 
         inputS.close();
     }
 
-    static void Save(ArrayList<String> database) {
+    private void Save() {
 
         Scanner inputS = new Scanner(System.in);
         Scanner inputN = new Scanner(System.in);
@@ -36,16 +51,16 @@ public class Main {
             }
         }
 
-    inputN.close();
-    inputS.close();
+        inputN.close();
+        inputS.close();
     }
 
-    static void Stamp(ArrayList<String> database) {
+    private void Stamp() {
 
         System.out.println(database);
     }
 
-    static void Modify(String username, String password) {
+    private void Modify() {
 
         Scanner inputN = new Scanner(System.in);
         Scanner inputS = new Scanner(System.in);
@@ -72,20 +87,13 @@ public class Main {
         
         Scanner inputN = new Scanner(System.in);
 
-        String username = "";
-        String password = "";
-        LogIn(username, password);
-        ArrayList<String> database = new ArrayList<String>();
+        Main user = new Main("Andra", "123");
+        user.Login();
+        user.Save();
+        System.out.println("Ecco i messaggi che hai salvato:");
+        user.Stamp();
+        user.Modify();
 
-        System.out.println("Vuoi salvare un messaggio? 1)Si 2)No");
-        int scelta = inputN.nextInt();
-        if (scelta == 1) {
-            Save(database);
-            System.out.println("Ecco i messaggi che hai salvato:");
-            Stamp(database);
-        }
-
-        Modify(username, password);
         inputN.close();
     }
-}
+ }
