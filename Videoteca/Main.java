@@ -60,7 +60,7 @@ public class Main {
                     }
                     break;
                 case 5:
-                    System.out.println("Inserisci l'nome dell'utente che vuole effettuare il noleggio:");
+                    System.out.println("Inserisci il nome dell'utente che vuole effettuare il noleggio:");
                     String nomeNoleggio = scannerS.nextLine();
                     System.out.println("Inserisci il titolo del film da noleggiare:");
                     String titoloNoleggio = scannerS.nextLine();
