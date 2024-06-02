@@ -5,10 +5,12 @@ import java.util.ArrayList;
 public class Videoteca {
     ArrayList<Film> listaFilm;
     ArrayList<Utente> listaUtenti;
+    ArrayList<Film> filmInNoleggio;
 
     public Videoteca() {
         listaFilm = new ArrayList<>();
         listaUtenti = new ArrayList<>();
+        filmInNoleggio = new ArrayList<>();
     }
 
     public void aggiungiFilm(Film film) {
@@ -31,6 +33,7 @@ public class Videoteca {
         if (listaFilm.contains(film)) {
             utente.noleggiaFilm(film);
             rimuoviFilm(film);
+            filmInNoleggio.add(film);
         } else {
             System.out.println("Film non disponibile");
         }

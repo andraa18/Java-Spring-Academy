@@ -86,7 +86,7 @@ public class Main {
                     String titoloRestituzione = scannerS.nextLine();
                     Film filmRestituzione = null;
 
-                    for (Film film : videoteca.listaFilm) {
+                    for (Film film : videoteca.filmInNoleggio) {
                         if (film.getTitolo().equals(titoloRestituzione)) {
                             filmRestituzione = film;
                         }
